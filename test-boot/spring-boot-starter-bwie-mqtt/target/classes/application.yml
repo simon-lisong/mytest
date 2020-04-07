@@ -1,0 +1,19 @@
+server:
+  port: 18080
+mqtt:
+  client:
+    username:
+    password:
+    brokerURIs: tcp://localhost:1883 # 客户端地址，多个使用逗号隔开
+    keepAliveInterval: 60
+    connectionTimeout: 30
+  producer:
+    clientId: ${random.value}
+    defaultQos: 1
+    defaultRetained: true
+    defaultTopic: defaultTopicName
+  consumer:
+    clientId: ${random.value}
+    defaultQos: 1
+    completionTimeout: 30000
+    topics: yjs/1705C/aaa,yjs/1705C/bbb,yjs/1705C/ccc # 监听的 topic，多个使用逗号隔开
